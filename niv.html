@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Feliz Cumpleaños Niv ⚽🏀</title>
+<meta name="description" content="Cumpleaños de Niv — edición Manchester United y Miami Heat" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; width: 100%; overflow-x: hidden; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    position: relative;
+    background:
+      radial-gradient(ellipse at 50% 0%, #1c0d0d 0%, #100808 35%, #050202 70%, #000 100%);
+  }
+
+  .stadium-glow {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(255, 199, 44, 0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 15% 30%, rgba(218, 41, 28, 0.18) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 30%, rgba(249, 160, 27, 0.18) 0%, transparent 50%);
+  }
+
+  .stadium-lights {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      radial-gradient(3px 3px at 6% 4%,  #FFC72C 0%, transparent 60%),
+      radial-gradient(3px 3px at 18% 3%, #FFC72C 0%, transparent 60%),
+      radial-gradient(3px 3px at 30% 5%, #FFC72C 0%, transparent 60%),
+      radial-gradient(3px 3px at 42% 3%, #FFC72C 0%, transparent 60%),
+      radial-gradient(3px 3px at 54% 5%, #FFC72C 0%, transparent 60%),
+      radial-gradient(3px 3px at 66% 3%, #FFC72C 0%, transparent 60%),
+      radial-gradient(3px 3px at 78% 5%, #FFC72C 0%, transparent 60%),
+      radial-gradient(3px 3px at 90% 3%, #FFC72C 0%, transparent 60%),
+      radial-gradient(1px 1px at 22% 22%, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 60% 18%, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 80% 26%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 8% 28%, rgba(255,255,255,0.5), transparent);
+    animation: twinkle 3s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle {
+    from { opacity: 0.55; }
+    to   { opacity: 1; }
+  }
+
+  .stadium-ring {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .stadium-ring::before {
+    content: '';
+    position: absolute;
+    top: 8%;
+    left: 0; right: 0;
+    height: 6px;
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(255, 199, 44, 0.55) 0 3px,
+      transparent 3px 14px
+    );
+    opacity: 0.7;
+  }
+
+  .crowd-floor {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 22vh;
+    background:
+      linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.95) 100%);
+    z-index: 0;
+  }
+  .crowd-floor::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0; height: 65%;
+    background-image:
+      radial-gradient(8px 14px at 4%  90%, #1a1a1a 0%, transparent 60%),
+      radial-gradient(8px 14px at 11% 92%, #2a2a2a 0%, transparent 60%),
+      radial-gradient(8px 14px at 18% 88%, #1a1a1a 0%, transparent 60%),
+      radial-gradient(8px 14px at 25% 92%, #2a2a2a 0%, transparent 60%),
+      radial-gradient(8px 14px at 32% 90%, #1a1a1a 0%, transparent 60%),
+      radial-gradient(8px 14px at 39% 92%, #2a2a2a 0%, transparent 60%),
+      radial-gradient(8px 14px at 46% 88%, #1a1a1a 0%, transparent 60%),
+      radial-gradient(8px 14px at 53% 92%, #2a2a2a 0%, transparent 60%),
+      radial-gradient(8px 14px at 60% 90%, #1a1a1a 0%, transparent 60%),
+      radial-gradient(8px 14px at 67% 92%, #2a2a2a 0%, transparent 60%),
+      radial-gradient(8px 14px at 74% 88%, #1a1a1a 0%, transparent 60%),
+      radial-gradient(8px 14px at 81% 92%, #2a2a2a 0%, transparent 60%),
+      radial-gradient(8px 14px at 88% 90%, #1a1a1a 0%, transparent 60%),
+      radial-gradient(8px 14px at 95% 92%, #2a2a2a 0%, transparent 60%);
+  }
+
+  #intro {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 100;
+    padding: 24px;
+    background:
+      radial-gradient(ellipse at center, rgba(40, 8, 8, 0.95) 0%, rgba(0, 0, 0, 0.99) 70%);
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+  #intro::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(218, 41, 28, 0.18) 0%, transparent 50%),
+      linear-gradient(225deg, rgba(249, 160, 27, 0.18) 0%, transparent 50%);
+  }
+  #intro.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .intro-content { position: relative; z-index: 2; }
+  .intro-emoji {
+    font-size: 64px;
+    margin-bottom: 12px;
+    animation: bounce 1.4s ease-in-out infinite;
+    letter-spacing: 16px;
+  }
+  @keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-16px); }
+  }
+  .intro-pre {
+    font-size: 12px;
+    letter-spacing: 8px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #FFC72C;
+  }
+  .intro-title {
+    font-size: clamp(38px, 7.5vw, 68px);
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .intro-name {
+    font-size: clamp(80px, 16vw, 160px);
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: #fff;
+    -webkit-text-stroke: 3px #DA291C;
+    text-shadow:
+      0 0 24px rgba(255, 199, 44, 0.5),
+      4px 4px 0 #000,
+      8px 8px 0 #98002E;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+  .intro-sub {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #F9A01B;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+  }
+  .start-btn {
+    background: linear-gradient(90deg, #DA291C 0%, #DA291C 50%, #000 50%, #000 100%);
+    color: #fff;
+    border: 3px solid #FFC72C;
+    padding: 18px 42px;
+    border-radius: 999px;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(255, 199, 44, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .start-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 40px rgba(255, 199, 44, 0.55);
+  }
+  .start-btn:active { transform: scale(0.98); }
+  .start-hint {
+    margin-top: 16px;
+    font-size: 13px;
+    opacity: 0.6;
+  }
+
+  main {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 20px 140px;
+  }
+
+  .scoreboard {
+    background: #0a0303;
+    border: 3px solid #FFC72C;
+    border-radius: 12px;
+    padding: 12px 22px;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(255, 199, 44, 0.25);
+    font-family: 'Courier New', monospace;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .scoreboard .col { text-align: center; }
+  .scoreboard .label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #FFC72C;
+    text-transform: uppercase;
+  }
+  .scoreboard .value {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  .scoreboard .value.red { color: #DA291C; }
+  .scoreboard .value.heat { color: #F9A01B; }
+  .scoreboard .divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(255, 199, 44, 0.3);
+  }
+
+  .greeting {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .greeting .pre {
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: #FFC72C;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .greeting h1 {
+    font-size: clamp(34px, 6vw, 54px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .greeting .name {
+    font-size: clamp(64px, 12vw, 120px);
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: #fff;
+    -webkit-text-stroke: 3px #DA291C;
+    text-shadow:
+      4px 4px 0 #000,
+      0 0 30px rgba(255, 199, 44, 0.5);
+    margin-top: -2px;
+  }
+  .greeting p {
+    margin-top: 14px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #FFC72C;
+    text-transform: uppercase;
+  }
+
+  .stage-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 800px;
+    margin: 18px auto 28px;
+  }
+
+  .jersey {
+    flex: 0 0 130px;
+    width: 130px;
+    border-radius: 8px 8px 4px 4px;
+    padding: 14px 10px;
+    text-align: center;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.55);
+    position: relative;
+  }
+  .jersey::before {
+    content: '';
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 14px;
+    border-radius: 2px;
+  }
+  .jersey-mufc {
+    background: linear-gradient(180deg, #DA291C 0%, #b51f15 100%);
+    color: #fff;
+    transform: rotate(-3deg);
+  }
+  .jersey-mufc::before { background: #1a1a1a; }
+  .jersey-heat {
+    background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+    color: #fff;
+    transform: rotate(3deg);
+    border: 2px solid #98002E;
+  }
+  .jersey-heat::before { background: #F9A01B; }
+  .jersey .team {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+  }
+  .jersey-mufc .team { color: #FFC72C; }
+  .jersey-heat .team { color: #F9A01B; }
+  .jersey .player {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .jersey .number {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 0.9;
+    color: #fff;
+    -webkit-text-stroke: 1px rgba(0,0,0,0.4);
+  }
+  .jersey-mufc .number { color: #FFC72C; -webkit-text-stroke: 1px #1a1a1a; }
+  .jersey-heat .number { color: #F9A01B; -webkit-text-stroke: 1px #98002E; }
+  .jersey .badge {
+    margin-top: 8px;
+    display: inline-block;
+    background: #FFC72C;
+    color: #0a0303;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .jersey-heat .badge { background: #F9A01B; }
+
+  .cake-area {
+    flex: 1 1 460px;
+    max-width: 500px;
+    position: relative;
+  }
+  .cake-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.65));
+  }
+
+  .controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 16px 0 8px;
+  }
+  .btn {
+    border: none;
+    padding: 13px 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: inherit;
+    text-transform: uppercase;
+    transition: transform 0.15s, background 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary {
+    background: linear-gradient(90deg, #DA291C 0%, #DA291C 50%, #000 50%, #000 100%);
+    color: #fff;
+    border: 2px solid #FFC72C;
+    box-shadow: 0 6px 20px rgba(255, 199, 44, 0.35);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 26px rgba(255, 199, 44, 0.55); }
+  .btn-ghost {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(6px);
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.18); }
+  .btn:active { transform: scale(0.97); }
+
+  .winner {
+    text-align: center;
+    margin-top: 24px;
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .winner.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .winner h2 {
+    font-size: clamp(34px, 6.5vw, 60px);
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    background: linear-gradient(90deg, #DA291C 0%, #FFC72C 50%, #F9A01B 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    text-shadow: 0 6px 30px rgba(255, 199, 44, 0.4);
+  }
+  .winner .glory {
+    font-size: clamp(15px, 2.5vw, 18px);
+    color: #FFC72C;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 8px;
+    font-weight: 800;
+  }
+  .winner p {
+    margin-top: 14px;
+    font-size: 15px;
+    color: #fff;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .lyrics {
+    max-width: 520px;
+    margin: 36px auto 0;
+    padding: 24px 28px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-left: 4px solid #FFC72C;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    line-height: 1.9;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .lyrics.show { opacity: 1; transform: translateY(0); }
+  .lyrics h3 {
+    font-size: 14px;
+    margin-bottom: 14px;
+    color: #FFC72C;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .lyrics em {
+    font-style: italic;
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .confetti {
+    position: fixed;
+    top: -20px;
+    width: 10px;
+    height: 14px;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0;
+    border-radius: 2px;
+  }
+  .confetti.go { animation: confettiFall 3s ease-in forwards; }
+  @keyframes confettiFall {
+    0%   { opacity: 1; transform: translateY(0) rotate(0); }
+    100% { opacity: 0; transform: translateY(110vh) rotate(900deg); }
+  }
+
+  .ball-fly {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 51;
+    opacity: 0;
+    font-size: 32px;
+    line-height: 1;
+  }
+  .ball-fly.go { animation: ballArc 1.6s ease-out forwards; }
+  @keyframes ballArc {
+    0%   { opacity: 1; transform: translate(0, 0) rotate(0); }
+    100% { opacity: 0; transform: translate(var(--bx, 200px), var(--by, -400px)) rotate(720deg); }
+  }
+
+  .music-control {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 60;
+    background: rgba(0,0,0,0.55);
+    border: 2px solid #FFC72C;
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    backdrop-filter: blur(8px);
+    transition: background 0.2s;
+  }
+  .music-control:hover { background: rgba(0,0,0,0.75); }
+
+  .flame {
+    transform-origin: center 92%;
+    animation: flicker 0.45s ease-in-out infinite alternate;
+    cursor: pointer;
+  }
+  .flame.out {
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    animation: none;
+  }
+  @keyframes flicker {
+    0%   { transform: scaleY(1) scaleX(1) rotate(-2deg); }
+    100% { transform: scaleY(1.14) scaleX(0.9) rotate(2deg); }
+  }
+  .smoke { opacity: 0; pointer-events: none; }
+  .smoke.on { animation: rise 2.5s ease-out forwards; }
+  @keyframes rise {
+    0%   { opacity: 0.8; transform: translateY(0) scale(0.4); }
+    100% { opacity: 0; transform: translateY(-80px) scale(1.8); }
+  }
+  .candle { cursor: pointer; }
+
+  .footer {
+    margin-top: 48px;
+    font-size: 11px;
+    opacity: 0.55;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 760px) {
+    .stage-row { flex-direction: column; gap: 10px; }
+    .jersey-mufc, .jersey-heat { transform: rotate(0); }
+    .scoreboard { gap: 14px; padding: 10px 16px; }
+    .scoreboard .divider { display: none; }
+    .controls { flex-direction: column; align-items: stretch; }
+    .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stadium-glow"></div>
+<div class="stadium-lights"></div>
+<div class="stadium-ring"></div>
+<div class="crowd-floor"></div>
+
+<div id="intro">
+  <div class="intro-content">
+    <div class="intro-emoji">⚽ 🏀</div>
+    <div class="intro-pre">★ Bienvenidos al estadio ★</div>
+    <div class="intro-title">Feliz cumpleaños</div>
+    <div class="intro-name">NIV</div>
+    <div class="intro-sub">★ Champion of two worlds ★</div>
+    <button class="start-btn" id="startBtn">
+      <span>▶</span> Kick off
+    </button>
+    <div class="start-hint">La música comenzará al tocar</div>
+  </div>
+</div>
+
+<main id="main">
+
+  <div class="scoreboard">
+    <div class="col">
+      <div class="label">Home</div>
+      <div class="value red">MUFC</div>
+    </div>
+    <div class="divider"></div>
+    <div class="col">
+      <div class="label">MVP</div>
+      <div class="value">NIV ★</div>
+    </div>
+    <div class="divider"></div>
+    <div class="col">
+      <div class="label">Away</div>
+      <div class="value heat">HEAT</div>
+    </div>
+    <div class="divider"></div>
+    <div class="col">
+      <div class="label">Goals</div>
+      <div class="value">∞</div>
+    </div>
+  </div>
+
+  <div class="greeting">
+    <div class="pre">★ Today's MVP ★</div>
+    <h1>Feliz cumpleaños</h1>
+    <div class="name">NIV</div>
+    <p>⚽ Glory Glory · 🏀 Heat Culture</p>
+  </div>
+
+  <div class="stage-row">
+    <div class="jersey jersey-mufc" aria-label="Jersey de Manchester United con el nombre Niv número 7">
+      <div class="team">UNITED</div>
+      <div class="player">Niv</div>
+      <div class="number">7</div>
+      <div class="badge">CAPTAIN</div>
+    </div>
+
+    <div class="cake-area" id="stage">
+      <svg class="cake-svg" viewBox="0 0 560 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pastel de cumpleaños con tema de Manchester United y Miami Heat para Niv">
+        <defs>
+          <radialGradient id="plateShade" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#000" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="ballShine" cx="35%" cy="32%" r="65%">
+            <stop offset="0%" stop-color="#fff"/>
+            <stop offset="60%" stop-color="#f0f0f0"/>
+            <stop offset="100%" stop-color="#cfcfcf"/>
+          </radialGradient>
+          <radialGradient id="bballShine" cx="35%" cy="32%" r="65%">
+            <stop offset="0%" stop-color="#FAA957"/>
+            <stop offset="60%" stop-color="#E8722C"/>
+            <stop offset="100%" stop-color="#a04d18"/>
+          </radialGradient>
+          <linearGradient id="goldRing" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FFE08A"/>
+            <stop offset="50%" stop-color="#FFC72C"/>
+            <stop offset="100%" stop-color="#b88a10"/>
+          </linearGradient>
+          <linearGradient id="heatFlame" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#1a1a1a"/>
+            <stop offset="50%" stop-color="#000"/>
+            <stop offset="100%" stop-color="#1a1a1a"/>
+          </linearGradient>
+        </defs>
+
+        <ellipse cx="280" cy="525" rx="240" ry="18" fill="url(#plateShade)"/>
+
+        <ellipse cx="280" cy="495" rx="220" ry="22" fill="#1a1a1a"/>
+        <ellipse cx="280" cy="490" rx="220" ry="22" fill="#2a2a2a"/>
+
+        <g>
+          <rect x="80" y="372" width="200" height="120" rx="0" fill="#DA291C"/>
+          <rect x="280" y="372" width="200" height="120" rx="0" fill="url(#heatFlame)"/>
+          <rect x="80" y="372" width="400" height="120" rx="6" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+          <rect x="276" y="372" width="8" height="120" fill="url(#goldRing)"/>
+          <path d="M80 384 Q110 370 140 384 T200 384 T260 384 L280 384 L280 372 L80 372 Z" fill="#b51f15"/>
+          <path d="M280 384 L300 384 Q330 370 360 384 T420 384 T480 384 L480 372 L280 372 Z" fill="#0a0a0a"/>
+          <text x="180" y="442" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="20" font-weight="900" fill="#FFC72C" letter-spacing="3">UNITED</text>
+          <text x="180" y="462" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="11" font-weight="800" fill="#fff" letter-spacing="4">GLORY GLORY</text>
+          <text x="380" y="442" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="22" font-weight="900" fill="#F9A01B" letter-spacing="3">HEAT</text>
+          <text x="380" y="462" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="11" font-weight="800" fill="#fff" letter-spacing="3">HEAT CULTURE</text>
+        </g>
+
+        <g>
+          <rect x="135" y="252" width="290" height="120" rx="6" fill="#fff8e8"/>
+          <rect x="135" y="252" width="290" height="14" fill="url(#goldRing)"/>
+          <rect x="135" y="358" width="290" height="14" fill="url(#goldRing)"/>
+          <text x="280" y="318" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="62" font-weight="900" fill="#DA291C" letter-spacing="6" stroke="#000" stroke-width="1.5">NIV</text>
+          <text x="280" y="345" text-anchor="middle" font-family="'Arial Black', sans-serif" font-size="11" font-weight="800" fill="#000" letter-spacing="6">★ THE CRACK ★</text>
+        </g>
+
+        <g>
+          <ellipse cx="280" cy="195" rx="100" ry="62" fill="url(#goldRing)" opacity="0.25"/>
+
+          <g transform="translate(248,195)">
+            <circle r="34" fill="url(#ballShine)" stroke="#1a1a1a" stroke-width="1.5"/>
+            <polygon points="0,-18 14,-8 9,9 -9,9 -14,-8" fill="#1a1a1a"/>
+            <line x1="-14" y1="-8" x2="-26" y2="-2" stroke="#1a1a1a" stroke-width="1.5"/>
+            <line x1="14" y1="-8" x2="26" y2="-2" stroke="#1a1a1a" stroke-width="1.5"/>
+            <line x1="-9" y1="9" x2="-15" y2="22" stroke="#1a1a1a" stroke-width="1.5"/>
+            <line x1="9" y1="9" x2="15" y2="22" stroke="#1a1a1a" stroke-width="1.5"/>
+            <line x1="0" y1="-18" x2="0" y2="-30" stroke="#1a1a1a" stroke-width="1.5"/>
+          </g>
+
+          <g transform="translate(312,195)">
+            <circle r="34" fill="url(#bballShine)" stroke="#3a1a05" stroke-width="1.5"/>
+            <line x1="-34" y1="0" x2="34" y2="0" stroke="#3a1a05" stroke-width="2"/>
+            <path d="M0 -34 Q-12 0 0 34" stroke="#3a1a05" stroke-width="2" fill="none"/>
+            <path d="M0 -34 Q12 0 0 34" stroke="#3a1a05" stroke-width="2" fill="none"/>
+            <ellipse cx="-12" cy="-12" rx="4" ry="2" fill="rgba(255,255,255,0.4)" transform="rotate(-30 -12 -12)"/>
+          </g>
+        </g>
+
+        <g id="candles"></g>
+      </svg>
+    </div>
+
+    <div class="jersey jersey-heat" aria-label="Jersey de Miami Heat con el nombre Niv número 3">
+      <div class="team">HEAT</div>
+      <div class="player">Niv</div>
+      <div class="number">3</div>
+      <div class="badge">★ MVP ★</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="btn btn-primary" id="blowBtn">⚽🏀 Anotar las velitas</button>
+    <button class="btn btn-ghost" id="relightBtn">🔥 Otro tiempo más</button>
+  </div>
+
+  <div class="winner" id="winner">
+    <h2>¡GOOOOL Y SWISH!</h2>
+    <div class="glory">★ Glory Glory · Heat Culture ★</div>
+    <p>Del fútbol inglés a la cancha de Miami, Niv lo logró otra vez. Que este nuevo año esté lleno de goles, triples, asistencias y muchos trofeos. ¡Eres el MVP de los dos mundos! 🏆⚽🏀</p>
+  </div>
+
+  <div class="lyrics" id="lyrics">
+    <h3>Las mañanitas 🎶</h3>
+    <em>Estas son las mañanitas<br>que cantaba el Rey David,<br>hoy por ser tu cumpleaños<br>te las cantamos a ti.</em>
+    <em>Despierta, Niv, despierta,<br>mira que ya amaneció,<br>ya los pajarillos cantan,<br>la luna ya se metió.</em>
+    <em>Qué linda está la mañana<br>en que vengo a saludarte,<br>venimos todos con gusto<br>y placer a felicitarte.</em>
+  </div>
+
+  <div class="footer">★ MUFC ✕ HEAT · Niv #7 / #3 · Champion of two worlds ★</div>
+</main>
+
+<button class="music-control" id="muteBtn" title="Silenciar / activar música">🔊</button>
+
+<audio id="bgAudio" src="las-mananitas.mp3" loop preload="auto"></audio>
+
+<script>
+(function() {
+  const intro    = document.getElementById('intro');
+  const startBtn = document.getElementById('startBtn');
+  const blowBtn  = document.getElementById('blowBtn');
+  const relightBtn = document.getElementById('relightBtn');
+  const winner   = document.getElementById('winner');
+  const lyrics   = document.getElementById('lyrics');
+  const candlesG = document.getElementById('candles');
+  const muteBtn  = document.getElementById('muteBtn');
+
+  const waxColors = ['#DA291C', '#FFC72C', '#000000', '#F9A01B', '#DA291C'];
+  const positions = [200, 240, 280, 320, 360];
+  const candleTop = 105;
+  const ballPool = ['⚽', '🏀'];
+
+  positions.forEach((cx, i) => {
+    const color = waxColors[i % waxColors.length];
+    const isBlack = color === '#000000';
+    const stripe = isBlack ? '#F9A01B' : '#fff';
+    const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+    g.setAttribute('class','candle');
+    g.setAttribute('data-idx', i);
+    g.innerHTML = `
+      <rect x="${cx-7}" y="${candleTop}" width="14" height="58" rx="2" fill="${color}" stroke="${isBlack ? '#F9A01B' : 'none'}" stroke-width="${isBlack ? 1 : 0}"/>
+      <rect x="${cx-7}" y="${candleTop+10}" width="14" height="3" fill="${stripe}" opacity="0.85"/>
+      <rect x="${cx-7}" y="${candleTop+28}" width="14" height="3" fill="${stripe}" opacity="0.85"/>
+      <rect x="${cx-7}" y="${candleTop+46}" width="14" height="3" fill="${stripe}" opacity="0.85"/>
+      <line x1="${cx}" y1="${candleTop}" x2="${cx}" y2="${candleTop-7}" stroke="#2C2C2A" stroke-width="1.4"/>
+      <g class="flame" data-flame="${i}">
+        <ellipse cx="${cx}" cy="${candleTop-16}" rx="6" ry="12" fill="#EF9F27"/>
+        <ellipse cx="${cx}" cy="${candleTop-14}" rx="3.5" ry="8" fill="#FAC775"/>
+        <ellipse cx="${cx}" cy="${candleTop-12}" rx="1.8" ry="5" fill="#FFF4E6"/>
+      </g>
+      <g class="smoke" data-smoke="${i}">
+        <circle cx="${cx}" cy="${candleTop-16}" r="3" fill="#D3D1C7"/>
+        <circle cx="${cx-3}" cy="${candleTop-22}" r="2.5" fill="#D3D1C7"/>
+        <circle cx="${cx+2}" cy="${candleTop-28}" r="2" fill="#D3D1C7"/>
+      </g>
+    `;
+    g.addEventListener('click', () => blowOne(i));
+    candlesG.appendChild(g);
+  });
+
+  let ballIdx = 0;
+  function blowOne(i) {
+    const f = document.querySelector(`[data-flame="${i}"]`);
+    const s = document.querySelector(`[data-smoke="${i}"]`);
+    if (!f || f.classList.contains('out')) return;
+    f.classList.add('out');
+    s.classList.remove('on');
+    void s.offsetWidth;
+    s.classList.add('on');
+    flyBall();
+    checkAll();
+  }
+
+  function flyBall() {
+    const b = document.createElement('div');
+    b.className = 'ball-fly';
+    b.textContent = ballPool[ballIdx % ballPool.length];
+    ballIdx++;
+    const startX = window.innerWidth / 2 - 16;
+    const startY = window.innerHeight / 2;
+    b.style.left = startX + 'px';
+    b.style.top  = startY + 'px';
+    b.style.setProperty('--bx', ((Math.random() * 700) - 350) + 'px');
+    b.style.setProperty('--by', (-(window.innerHeight + Math.random() * 200)) + 'px');
+    document.body.appendChild(b);
+    requestAnimationFrame(() => b.classList.add('go'));
+    setTimeout(() => b.remove(), 1800);
+  }
+
+  function checkAll() {
+    const remaining = document.querySelectorAll('.flame:not(.out)').length;
+    if (remaining === 0) {
+      winner.classList.add('show');
+      lyrics.classList.add('show');
+      fireConfetti();
+      setTimeout(fireConfetti, 800);
+    }
+  }
+
+  function fireConfetti() {
+    const colors = ['#DA291C', '#000', '#FFC72C', '#F9A01B', '#fff', '#98002E', '#b51f15'];
+    for (let i = 0; i < 150; i++) {
+      const el = document.createElement('span');
+      el.className = 'confetti';
+      el.style.left = Math.random()*100 + '%';
+      el.style.background = colors[Math.floor(Math.random()*colors.length)];
+      el.style.animationDelay = (Math.random()*1.4) + 's';
+      el.style.transform = `rotate(${Math.random()*360}deg)`;
+      document.body.appendChild(el);
+      requestAnimationFrame(() => el.classList.add('go'));
+      setTimeout(() => el.remove(), 4500);
+    }
+  }
+
+  blowBtn.addEventListener('click', () => {
+    const flames = document.querySelectorAll('.flame:not(.out)');
+    flames.forEach((f, k) => setTimeout(() => {
+      const idx = f.getAttribute('data-flame');
+      blowOne(idx);
+    }, k*220));
+  });
+
+  relightBtn.addEventListener('click', () => {
+    document.querySelectorAll('.flame').forEach(f => f.classList.remove('out'));
+    document.querySelectorAll('.smoke').forEach(s => s.classList.remove('on'));
+    winner.classList.remove('show');
+    lyrics.classList.remove('show');
+  });
+
+  const audio = document.getElementById('bgAudio');
+  audio.volume = 0.6;
+  let isMuted = false;
+
+  startBtn.addEventListener('click', () => {
+    intro.classList.add('hidden');
+    setTimeout(fireConfetti, 400);
+    const p = audio.play();
+    if (p && typeof p.catch === 'function') {
+      p.catch(() => {
+        muteBtn.textContent = '🔇';
+        isMuted = true;
+      });
+    }
+  });
+
+  muteBtn.addEventListener('click', () => {
+    if (isMuted) {
+      audio.muted = false;
+      if (audio.paused) audio.play().catch(() => {});
+      muteBtn.textContent = '🔊';
+      isMuted = false;
+    } else {
+      audio.muted = true;
+      muteBtn.textContent = '🔇';
+      isMuted = true;
+    }
+  });
+})();
+</script>
+</body>
+</html>
